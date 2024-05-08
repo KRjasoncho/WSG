@@ -34,22 +34,24 @@
 </div>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Jersey+25+Charted&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
   .topBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gray;
+
     padding: 10px;
+    background-color: rgb(255, 241, 223);
   }
   .topBar__img {
     width: 20px;
   }
 
   .topBar__title {
-    font-family: "Jersey 25 Charted", sans-serif;
+    font-family: "Poetsen One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30px;
+    border: 0.2rem solid black;
   }
 </style>
