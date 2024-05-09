@@ -1,4 +1,7 @@
 <script>
+  const moveToHomePage = () => {
+    window.location.hash = "/";
+  };
 </script>
 
 <div class="topBar">
@@ -16,7 +19,7 @@
       />
     </svg>
   </div>
-  <div class="topBar__title">Jason's WSG</div>
+  <button class="topBar__title" on:click={moveToHomePage}>Jason's WSG</button>
   <div class="topBar__img">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -53,5 +56,8 @@
     font-style: normal;
     font-size: 30px;
     border: 0.2rem solid black;
+    color: none;
+    cursor: pointer;
+    background-color: transparent;
   }
 </style>
