@@ -16,12 +16,6 @@
     return String.fromCharCode(65 + Math.floor(Math.random() * 26));
   };
 
-  // 정답 단어를 넣어주는 함수
-  //1. 게임보드에서 한 위치를 랜덤으로 뽑는다. (형태는 item-세로-가로)
-  //2. 해당 위치로부터 우,하,좌하를 선택한다
-  //2-1) 선택한 방향으로 뻗어나가지 못할시 방향을 다시 선택한다.
-  //3. 선택한 시작 위치로부터 지정한 방향으로 단어를 배열한다.
-
   //단어의 시작지점을 랜덤으로 뽑아주는 함수
   const searchStartPoint = (Num) => {
     const pre1 = Math.floor(Math.random() * Num);
@@ -33,19 +27,32 @@
         column: pre1,
       };
       return startPointItem;
-    } else {
-      return searchStartPoint(Num);
     }
   };
 
   //단어 배열 방향을 선택하는 함수 1=우측,2=좌하단(대각선),3=하단
   const selectDirection = () => {
-    const pre = Math.floor(Math.random() * 3) + 1; // 1에서 3 사이의 수를 직접 생성
-    return pre.toString(); // 숫자를 문자열로 변환하여 반환
+    const pre = Math.floor(Math.random() * 3) + 1;
+    return pre.toString();
   };
 
   //단어를 우측으로 배열하는 함수
+  const rowInsert = (startpoint, TargetWord) => {
+    if (startpoint.row + TargetWord.lenght > Num) {
+      return console.log(false);
+    } else {
+      const wordStart = document.querySelector(`#${startpoint.id}`);
 
+      for (let i = 0; i < TargetWord.lenght; i++) {
+        let a = document.getElementById(
+          `itme-${startpoint.column}-${startpoint.row + i}`
+        );
+        a.innerText = `${TargetWord[i]}`;
+      }
+    }
+  };
+  //게임을 실행해주는 함수
+  const gameStart = () => {};
   //   정답 단어를 가져오는 함수
   const loadWord = () => {};
 </script>
@@ -56,7 +63,7 @@
   <div>타이머</div>
   <div>제작자</div>
 </div>
-<div>{selectDirection()}</div>
+
 <div>
   <div class="gameGrid">
     <div class="gameBored" id="GB">
